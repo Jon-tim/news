@@ -70,7 +70,7 @@ nav .mobile-btn {
   align-items: center;
   flex-direction: column;
 }
-.mobile-nav-section .mobile-nav > img {
+.mobile-nav-section .mobile-nav > svg {
   align-self: flex-end;
   margin-bottom: 5rem;
   width: unset;
@@ -238,7 +238,7 @@ aside div p {
 }
 
 .dark h1,
-.dark a,
+.dark .mobile-nav ul li a,
 .dark h3,
 .dark i {
   color: hsl(36deg, 100%, 99%);
@@ -246,11 +246,15 @@ aside div p {
 .dark .logo-section svg path {
   fill: hsl(36deg, 100%, 99%);
 }
-.dark .mobile-btn svg g {
+.dark .mobile-btn svg g,
+.dark .mobile-nav svg g {
   fill: hsl(36deg, 100%, 99%);
 }
 .dark .headline div:last-of-type h3 {
   color: hsl(36deg, 100%, 99%);
+}
+.dark .mobile-nav {
+  background-color: rgb(15, 14, 14);
 }
 
 @media (min-width: 768px) {

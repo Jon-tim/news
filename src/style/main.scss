@@ -76,7 +76,7 @@ nav {
     // z-index: 100;
     @include align-center;
     flex-direction: column;
-    > img {
+    > svg {
       align-self: flex-end;
       margin-bottom: 5rem;
       width: unset;
@@ -258,7 +258,7 @@ aside {
 // }
 .dark {
   h1,
-  a,
+  .mobile-nav ul li a,
   h3,
   i {
     color: $Off-white;
@@ -266,11 +266,15 @@ aside {
   .logo-section svg path {
     fill: $Off-white;
   }
-  .mobile-btn svg g {
+  .mobile-btn svg g,
+  .mobile-nav svg g {
     fill: $Off-white;
   }
   .headline div:last-of-type h3 {
     color: $Off-white;
+  }
+  .mobile-nav {
+    background-color: rgb(15, 14, 14);
   }
 }
 
