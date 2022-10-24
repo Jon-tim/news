@@ -30,9 +30,12 @@ nav {
   justify-content: space-between;
   padding-block: 1rem;
 }
+nav .logo-section {
+  cursor: pointer;
+}
 
 .mobile-nav-section {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   transform: translateX(100%);
   width: 100%;
   height: 100vh;
@@ -96,13 +99,13 @@ nav {
   text-transform: capitalize;
   font-size: 1rem;
   color: hsl(236deg, 13%, 42%);
+  transition: all 0.2s linear;
 }
 .desktop-nav-section ul a:hover {
   color: hsl(5deg, 85%, 63%);
 }
 
 .main-content {
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
@@ -113,6 +116,10 @@ nav {
   display: none;
 }
 
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
 .hero-text h1 {
   color: hsl(240deg, 100%, 5%);
   font-size: 3rem;
@@ -126,12 +133,13 @@ nav {
   max-width: 360px;
 }
 .hero-text div .btn {
+  cursor: pointer;
   background-color: hsl(5deg, 85%, 63%);
   width: 220px;
   height: 50px;
   display: flex;
   align-items: center;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   justify-content: center;
 }
 .hero-text div .btn:hover {
@@ -167,7 +175,7 @@ aside div h2 {
   color: hsl(36deg, 100%, 99%);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 aside div h2:hover {
   color: hsl(35deg, 77%, 62%);
@@ -177,43 +185,39 @@ aside div p {
   color: hsl(233deg, 8%, 79%);
 }
 
-.headlines {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.headlines .headline {
+.headline {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
-.headlines .headline .headline-img {
+.headline .headline-img {
   width: 100px;
 }
-.headlines .headline .headline-img img {
+.headline .headline-img img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
 }
-.headlines .headline div:last-of-type {
+.headline div:last-of-type {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.headlines .headline div:last-of-type h1 {
+.headline div:last-of-type h1 {
   color: hsl(233deg, 8%, 79%);
   font-size: 2rem;
   font-weight: 700;
 }
-.headlines .headline div:last-of-type h3 {
+.headline div:last-of-type h3 {
   font-weight: 900;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
-.headlines .headline div:last-of-type h3:hover {
+.headline div:last-of-type h3:hover {
   color: hsl(5deg, 85%, 63%);
 }
-.headlines .headline div:last-of-type p {
+.headline div:last-of-type p {
   color: hsl(236deg, 13%, 42%);
   max-width: 220px;
 }
@@ -231,11 +235,26 @@ aside div p {
   }
   .main-content {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
   .main-content .hero {
     grid-column: 1/3;
   }
   .main-content aside {
     grid-column: 3/4;
+  }
+  .hero-text {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hero-text h1 {
+    font-size: 3.5rem;
+    width: 320px;
+  }
+  .headlines {
+    grid-column: 1/-1;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
