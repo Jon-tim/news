@@ -1,8 +1,13 @@
 var openNav = document.querySelector(".mobile-btn");
 var mobileNav = document.querySelector(".mobile-nav-section");
+var overlay = document.querySelector(".overlay");
 var closeNav = document.querySelector(".close");
 var themeSwitch = document.querySelectorAll(".theme-switch-section i");
 var body = document.body;
+//Overlay to close mobile-nav menu
+overlay.addEventListener("click", function () {
+    mobileNav.style.display = "none";
+});
 // function that brings mobile nav in
 openNav.addEventListener("click", function () {
     mobileNav.style.display = "block";
