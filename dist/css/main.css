@@ -5,12 +5,17 @@
   font-family: "Inter", sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 body {
   overflow-x: hidden;
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 main {
@@ -25,13 +30,9 @@ nav {
   justify-content: space-between;
   padding-block: 1rem;
 }
-@media (min-width: 768px) {
-  nav .mobile-btn {
-    display: none;
-  }
-}
 
 .mobile-nav-section {
+  transition: all 0.3s linear;
   transform: translateX(100%);
   width: 100%;
   height: 100vh;
@@ -99,8 +100,142 @@ nav {
 .desktop-nav-section ul a:hover {
   color: hsl(5deg, 85%, 63%);
 }
+
+.main-content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 4rem;
+}
+
+.desktop-image {
+  display: none;
+}
+
+.hero-text h1 {
+  color: hsl(240deg, 100%, 5%);
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 800;
+  margin: 1.5rem 0rem;
+}
+.hero-text div p {
+  color: hsl(236deg, 13%, 42%);
+  margin-bottom: 2rem;
+  max-width: 360px;
+}
+.hero-text div .btn {
+  background-color: hsl(5deg, 85%, 63%);
+  width: 220px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s linear;
+  justify-content: center;
+}
+.hero-text div .btn:hover {
+  background-color: hsl(240deg, 100%, 5%);
+}
+.hero-text div .btn a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: hsl(36deg, 100%, 99%);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+aside {
+  background-color: hsl(240deg, 100%, 5%);
+  padding: 1.5rem;
+}
+aside h1 {
+  color: hsl(35deg, 77%, 62%);
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+aside div {
+  padding-block: 2rem;
+}
+aside div:not(.last-aside) {
+  border-bottom: 1px solid hsl(36deg, 100%, 99%);
+}
+aside div:is(:last-of-type) {
+  padding-bottom: 0px;
+}
+aside div h2 {
+  color: hsl(36deg, 100%, 99%);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s linear;
+}
+aside div h2:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+aside div p {
+  max-width: 320px;
+  color: hsl(233deg, 8%, 79%);
+}
+
+.headlines {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.headlines .headline {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.headlines .headline .headline-img {
+  width: 100px;
+}
+.headlines .headline .headline-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.headlines .headline div:last-of-type {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.headlines .headline div:last-of-type h1 {
+  color: hsl(233deg, 8%, 79%);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.headlines .headline div:last-of-type h3 {
+  font-weight: 900;
+  transition: all 0.3s linear;
+}
+.headlines .headline div:last-of-type h3:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+.headlines .headline div:last-of-type p {
+  color: hsl(236deg, 13%, 42%);
+  max-width: 220px;
+}
+
 @media (min-width: 768px) {
+  .mobile-btn,
+.mobile-image {
+    display: none;
+  }
   .desktop-nav-section {
     display: flex;
+  }
+  .desktop-image {
+    display: block;
+  }
+  .main-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main-content .hero {
+    grid-column: 1/3;
+  }
+  .main-content aside {
+    grid-column: 3/4;
   }
 }
