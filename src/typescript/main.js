@@ -2,6 +2,7 @@ var openNav = document.querySelector(".mobile-btn");
 var mobileNav = document.querySelector(".mobile-nav-section");
 var closeNav = document.querySelector(".close");
 var themeSwitch = document.querySelectorAll(".theme-switch-section i");
+var body = document.body;
 // function that brings mobile nav in
 openNav.addEventListener("click", function () {
     mobileNav.style.display = "block";
@@ -11,15 +12,34 @@ closeNav.addEventListener("click", function () {
     mobileNav.style.display = "none";
     document.body.style.overflowY = "unset";
 });
-//theme
-themeSwitch.forEach(function (element) {
-    element.addEventListener("click", function () {
-        document.body.classList.toggle("dark");
-        if (document.body.classList.contains("dark")) {
-            element.classList.replace("bx-moon", "bx-sun");
+// THEME MATTERS------------
+//Checking Local Storage for theme selection, if any
+var currentTheme = localStorage.getItem("theme");
+var theme;
+//Using OS preferred theme && check for darkmode preference at the os level
+var prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+themeSwitch.forEach(function (i) {
+    if (currentTheme === "dark") {
+        body.classList.add("dark");
+        i.classList.replace("bx-moon", "bx-sun");
+    }
+    else {
+        i.classList.replace("bx-sun", "bx-moon");
+        body.classList.remove("dark");
+    }
+    //THEME ON CLICK
+    i.addEventListener("click", function () {
+        body.classList.toggle("dark");
+        //if OS setting is dark
+        if (body.classList.contains("dark")) {
+            i.classList.replace("bx-moon", "bx-sun");
+            theme = "dark";
         }
         else {
-            element.classList.replace("bx-sun", "bx-moon");
+            i.classList.replace("bx-sun", "bx-moon");
+            theme = "light";
         }
+        //   // Then save the choice in localStorage
+        localStorage.setItem("theme", theme);
     });
 });

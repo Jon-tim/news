@@ -2,6 +2,7 @@ const openNav: any = document.querySelector(".mobile-btn");
 const mobileNav: any = document.querySelector(".mobile-nav-section");
 const closeNav: any = document.querySelector(".close");
 const themeSwitch: any = document.querySelectorAll(".theme-switch-section i");
+const body = document.body;
 
 // function that brings mobile nav in
 openNav.addEventListener("click", () => {
@@ -13,14 +14,34 @@ closeNav.addEventListener("click", () => {
   document.body.style.overflowY = "unset";
 });
 
-//theme
-themeSwitch.forEach((element) => {
-  element.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    if (document.body.classList.contains("dark")) {
-      element.classList.replace("bx-moon", "bx-sun");
+// THEME MATTERS------------
+//Checking Local Storage for theme selection, if any
+const currentTheme = localStorage.getItem("theme");
+let theme;
+
+//Using OS preferred theme && check for darkmode preference at the os level
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+themeSwitch.forEach((i) => {
+  if (currentTheme === "dark") {
+    body.classList.add("dark");
+    i.classList.replace("bx-moon", "bx-sun");
+  } else {
+    i.classList.replace("bx-sun", "bx-moon");
+    body.classList.remove("dark");
+  }
+
+  //THEME ON CLICK
+  i.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    //if OS setting is dark
+    if (body.classList.contains("dark")) {
+      i.classList.replace("bx-moon", "bx-sun");
+      theme = "dark";
     } else {
-      element.classList.replace("bx-sun", "bx-moon");
+      i.classList.replace("bx-sun", "bx-moon");
+      theme = "light";
     }
+    //   // Then save the choice in localStorage
+    localStorage.setItem("theme", theme);
   });
 });
