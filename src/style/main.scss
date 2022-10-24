@@ -14,6 +14,7 @@ img {
 }
 
 body {
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -31,6 +32,8 @@ main {
 // nav section
 
 nav {
+  width: 100%;
+  // overflow: hidden;
   @include align-center;
   justify-content: space-between;
   //   margin-bottom: 1rem;
@@ -44,9 +47,8 @@ nav {
 }
 
 .mobile-nav-section {
-  overflow: hidden;
   @include smooth;
-  transform: translateX(100%);
+  display: none;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -54,14 +56,13 @@ nav {
   right: 0px;
   background-color: hsla(0, 0%, 0%, 0.75);
   .mobile-nav {
-    overflow: hidden;
     position: absolute;
     top: 0px;
     right: 0px;
     width: 70%;
     height: 100%;
     background-color: $Off-white;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     // z-index: 100;
     @include align-center;
     flex-direction: column;
