@@ -33,8 +33,12 @@ nav {
 nav .logo-section {
   cursor: pointer;
 }
+nav .mobile-btn {
+  cursor: pointer;
+}
 
 .mobile-nav-section {
+  overflow: hidden;
   transition: all 0.2s linear;
   transform: translateX(100%);
   width: 100%;
@@ -45,6 +49,7 @@ nav .logo-section {
   background-color: hsla(0deg, 0%, 0%, 0.75);
 }
 .mobile-nav-section .mobile-nav {
+  overflow: hidden;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -59,6 +64,7 @@ nav .logo-section {
 .mobile-nav-section .mobile-nav > img {
   align-self: flex-end;
   margin-bottom: 5rem;
+  width: unset;
 }
 .mobile-nav-section .mobile-nav ul {
   align-self: flex-start;
