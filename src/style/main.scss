@@ -16,6 +16,16 @@ img {
 body {
   width: 100%;
   overflow-x: hidden;
+  //   background: #000;
+}
+
+body.dark {
+  background-color: rgb(15, 14, 14);
+}
+
+i {
+  font-size: 1.5rem;
+  color: $Dark-grayish-blue;
 }
 
 p {
@@ -246,6 +256,23 @@ aside {
   }
 }
 // }
+.dark {
+  h1,
+  a,
+  h3,
+  i {
+    color: $Off-white;
+  }
+  .logo-section svg path {
+    fill: $Off-white;
+  }
+  .mobile-btn svg g {
+    fill: $Off-white;
+  }
+  .headline div:last-of-type h3 {
+    color: $Off-white;
+  }
+}
 
 //MEDIA QUERY
 

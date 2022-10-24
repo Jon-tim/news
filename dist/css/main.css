@@ -14,6 +14,15 @@ body {
   overflow-x: hidden;
 }
 
+body.dark {
+  background-color: rgb(15, 14, 14);
+}
+
+i {
+  font-size: 1.5rem;
+  color: hsl(236deg, 13%, 42%);
+}
+
 p {
   font-size: 16px;
   line-height: 1.5;
@@ -226,6 +235,22 @@ aside div p {
 .headline div:last-of-type p {
   color: hsl(236deg, 13%, 42%);
   max-width: 220px;
+}
+
+.dark h1,
+.dark a,
+.dark h3,
+.dark i {
+  color: hsl(36deg, 100%, 99%);
+}
+.dark .logo-section svg path {
+  fill: hsl(36deg, 100%, 99%);
+}
+.dark .mobile-btn svg g {
+  fill: hsl(36deg, 100%, 99%);
+}
+.dark .headline div:last-of-type h3 {
+  color: hsl(36deg, 100%, 99%);
 }
 
 @media (min-width: 768px) {
