@@ -1,0 +1,17 @@
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+// @mixin align-center {
+//   display: flex;
+//   align-items: center;
+// }
+
+@mixin a-tag {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+@mixin lists {
+  list-style: none;
+}
