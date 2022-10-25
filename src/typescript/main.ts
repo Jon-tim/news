@@ -13,11 +13,11 @@ overlay.addEventListener("click", () => {
 // function that brings mobile nav in
 openNav.addEventListener("click", () => {
   mobileNav.style.display = "block";
-  document.body.style.overflowY = "hidden";
+//   document.body.style.overflowY = "hidden";
 });
 closeNav.addEventListener("click", () => {
   mobileNav.style.display = "none";
-  document.body.style.overflowY = "unset";
+//   document.body.style.overflowY = "unset";
 });
 
 // THEME MATTERS------------
